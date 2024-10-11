@@ -8,12 +8,15 @@ public class Generatorv2 : MonoBehaviour
     private float m_GenerateTime;
     public float GrowthTime;
 
-    public int SpawnRate;
+    public float SpawnRate;
     public int SpawnCount;
 
     // detection fertilizer
     public float detectionRadius = 20f;
-    public LayerMask FertilizerLayer;
+
+    [SerializeField] private LayerMask FertilizerLayer;
+    [SerializeField] private LayerMask CarriorLayer;
+
     // Array de un solo collider
     private Collider[] colliderBuffer = new Collider[1];
 
@@ -59,30 +62,36 @@ public class Generatorv2 : MonoBehaviour
     }
     private void GenerateFood()
     {
-        int ran = Random.Range(0, SpawnRate);
-        if (ran == 0)
+        float ran = Random.value;
+        if (ran < SpawnRate)
         {
             m_EnvController.SpawnTarget(transform.position);
         }
     }
     private void DetectFertilizer()
     {
-        Vector3 detectionPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-
         // Usamos OverlapSphereNonAlloc para llenar el array con hasta 1 collider
-        int hitCount = Physics.OverlapSphereNonAlloc(detectionPosition, detectionRadius, colliderBuffer, FertilizerLayer);
+        int hitCount = Physics.OverlapSphereNonAlloc(transform.position, detectionRadius, colliderBuffer, FertilizerLayer | CarriorLayer);
 
         if (hitCount > 0)
         {
-            m_EnvController.DespawnFertilizer(colliderBuffer[0].gameObject);
-            InitializeEvents();
+            GameObject detectedObject = colliderBuffer[0].gameObject;
+
+            if ((FertilizerLayer.value & (1 << detectedObject.layer)) > 0)
+            {
+                m_EnvController.DespawnFertilizer(detectedObject);
+                InitializeEvents();
+                return;
+            }
+            else if ((CarriorLayer.value & (1 << detectedObject.layer)) > 0)
+            {
+                m_EnvController.DespawnCarrion(detectedObject);
+            }
+
         }
-        else
-        {
-            m_Renderer.material = m_PreMaterial;
-            m_Plant.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-            m_EnvController.DespawnGenerator(gameObject);
-        }
+        m_Renderer.material = m_PreMaterial;
+        m_Plant.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+        m_EnvController.DespawnGenerator(gameObject);
     }
 
     IEnumerator ScaleOverTime(Transform target, Vector3 endScale, float time)

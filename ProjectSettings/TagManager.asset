@@ -14,6 +14,7 @@ TagManager:
   - HunterArea
   - Generator
   - Fertilizer
+  - Carrion
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - HuntedWall
   - Hunted
   - Fertilizer
-  - 
+  - Carrion
   - 
   - 
   - 

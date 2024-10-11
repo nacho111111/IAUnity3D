@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DespawnTime: 0
-  GenerateTime: 0
   GrowthTime: 0
   SpawnRate: 0
   SpawnCount: 0
@@ -76,6 +75,9 @@ MonoBehaviour:
   FertilizerLayer:
     serializedVersion: 2
     m_Bits: 256
+  CarriorLayer:
+    serializedVersion: 2
+    m_Bits: 512
   m_Plant: {fileID: 2597612695796674072}
   PostMaterial: {fileID: 0}
 --- !u!1001 &2940282289701802825

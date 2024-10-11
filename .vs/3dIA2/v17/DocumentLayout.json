@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|d:\\users\\nacho\\desktop\\progra\\unity\\3dia2\\assets\\scripts\\multiagent_v3\\envcontrollerv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\assets\\scripts\\multiagent_v3\\envcontrollerv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiagent_v3\\envcontrollerv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|d:\\users\\nacho\\desktop\\progra\\unity\\3dia2\\assets\\scripts\\multiagent_v3\\multiagentv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiagent_v3\\multiagentv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\assets\\scripts\\multiagent_v3\\generatorv2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiagent_v3\\generatorv2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\assets\\scripts\\multiagent_v3\\timermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiagent_v3\\timermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\assets\\scripts\\multiagent_v3\\multiagentv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiagent_v3\\multiagentv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\assets\\scripts\\multiagent_v3\\targetv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiagent_v3\\targetv3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\assets\\scripts\\multiagent_v3\\timermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6445135C-CA54-5382-84AB-28FFF95368E1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\multiagent_v3\\timermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,21 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Generatorv2.cs",
-              "DocumentMoniker": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\Generatorv2.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MultiAgent_v3\\Generatorv2.cs",
-              "ToolTip": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\Generatorv2.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MultiAgent_v3\\Generatorv2.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAqwDsAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T21:29:18.942Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -53,46 +40,57 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\MultiAgent_v3\\EnvControllerv3.cs",
               "ToolTip": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\EnvControllerv3.cs",
               "RelativeToolTip": "Assets\\Scripts\\MultiAgent_v3\\EnvControllerv3.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAiwGcAAAArAAAA",
+              "ViewState": "AQIAAAcBAAAAAAAAAAAqwCMBAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-21T05:35:43.135Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TimerManager.cs",
-              "DocumentMoniker": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\TimerManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MultiAgent_v3\\TimerManager.cs",
-              "ToolTip": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\TimerManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MultiAgent_v3\\TimerManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T21:18:25.373Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MultiAgentv3.cs",
               "DocumentMoniker": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\MultiAgentv3.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MultiAgent_v3\\MultiAgentv3.cs",
               "ToolTip": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\MultiAgentv3.cs",
               "RelativeToolTip": "Assets\\Scripts\\MultiAgent_v3\\MultiAgentv3.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAAAL8AAAAAAAAA",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAwwKYAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-21T03:31:49.648Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Generatorv2.cs",
+              "DocumentMoniker": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\Generatorv2.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MultiAgent_v3\\Generatorv2.cs",
+              "ToolTip": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\Generatorv2.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MultiAgent_v3\\Generatorv2.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAAADcAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T21:29:18.942Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "TimerManager.cs",
+              "DocumentMoniker": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\TimerManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MultiAgent_v3\\TimerManager.cs",
+              "ToolTip": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\TimerManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MultiAgent_v3\\TimerManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T21:18:25.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Targetv3.cs",
               "DocumentMoniker": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\Targetv3.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MultiAgent_v3\\Targetv3.cs",
               "ToolTip": "D:\\Users\\nacho\\Desktop\\Progra\\unity\\3dIA2\\Assets\\Scripts\\MultiAgent_v3\\Targetv3.cs",
               "RelativeToolTip": "Assets\\Scripts\\MultiAgent_v3\\Targetv3.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAsAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-28T23:06:18.745Z"
             }

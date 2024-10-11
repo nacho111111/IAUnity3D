@@ -12,6 +12,8 @@ public class MultiAgentv3 : Agent
     [HideInInspector] public Color colorState;
     public float Energy; // energia restante
     [HideInInspector] public float MaxEnergy;
+    [HideInInspector] public float InitialEnergy;
+    private float m_InitialEnergy;
     [HideInInspector] public float LossEnergy;
     [HideInInspector] public float MovSpeed;
     [HideInInspector] public int reproductionRate;
@@ -20,13 +22,10 @@ public class MultiAgentv3 : Agent
     private float m_RealLossEnergy; // este varia entre 0 y LossOEnergy
     [HideInInspector] public Team team;
 
-    private float m_Existential; // penalizacion por tiempo de ejecucion 
-    private float m_HuntedExistentialBonus; // bonus por no morir hunted 
-    public float temp;
+    private float m_Existential; // recompensa por tiempo de ejecucion 
 
     // state
     public bool state;  // estado, si ha comido o no
-    private float m_TimerState  = 0;
     [HideInInspector] public float IntervalTimerState;
     // end state
 
@@ -36,16 +35,18 @@ public class MultiAgentv3 : Agent
     private EnvControllerv3 m_envController;
     BehaviorParameters m_BehaviorParameters;
     //end references
-
+    private TimerManager m_TimeManager;
 
     public override void Initialize()
     {
         agentRb = GetComponent<Rigidbody>();
         m_Renderer = GetComponentInParent<Renderer>();
         m_envController = gameObject.GetComponentInParent<EnvControllerv3>();
+        m_TimeManager = GetComponentInParent<TimerManager>();
 
         m_Existential = 1f / m_envController.MaxEnvironmentSteps;
         m_RealLossEnergy = LossEnergy;
+        m_InitialEnergy = InitialEnergy * MaxEnergy;
 
         m_BehaviorParameters = gameObject.GetComponent<BehaviorParameters>();
 
@@ -95,43 +96,21 @@ public class MultiAgentv3 : Agent
         transform.Rotate(rotateDir, Time.deltaTime * 200f);
 
         agentRb.AddForce(dirToGo * MovSpeed, ForceMode.VelocityChange);
-
-
     }
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        if (team == Team.Hunted)
+        AddReward(m_Existential);
+        if (Energy <= 0)
         {
-            AddReward(-m_Existential + m_HuntedExistentialBonus);
-            temp = -m_Existential + m_HuntedExistentialBonus;
-            m_HuntedExistentialBonus += 0.001f / m_envController.MaxEnvironmentSteps;
-            if (Energy <= 0)
-            {
-                InactivateAgent();
-            }
+            AgentExhaustion();
         }
-        else
-        {
-            AddReward(-m_Existential);
-            if (Energy <= 0)
-            {
-                InactivateAgent();
-            }
-        }
-        // timer state
-        if (state == true)
-        {
-            m_TimerState += Time.deltaTime;
-            if (m_TimerState >= IntervalTimerState)
-            {
-                state = false;
-                m_TimerState = 0f;
-                m_RealLossEnergy = LossEnergy;
-                m_Renderer.material.color = Color.white;
-            }
-        }
-
         MoveAgent(actionBuffers.DiscreteActions); // recibe 1 vector de 5 observaciones 
+    }
+    private void ResetState() // timer state
+    {
+        state = false;
+        m_RealLossEnergy = LossEnergy;
+        m_Renderer.material.color = Color.white;
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -160,86 +139,74 @@ public class MultiAgentv3 : Agent
         {
             if (state == false && collision.gameObject.CompareTag("Target")) // cuando toma el target
             {
-                state = true;
-                Energy = MaxEnergy;
-                m_Renderer.material.color = colorState;
-                m_RealLossEnergy = 0; // al "comer" deja de perder energia
-                AddReward(1.5f);
-                m_envController.RewardGroup(Team.Hunted);
-
-                //collision.gameObject.GetComponent<TargetMulti>().ResetTarget();
-                //m_envController.SpawnObject(collision.transform); // se puede optimizar 
+                CollisionBehavior();
+                //AddReward(0.2f);
                 m_envController.DespawnTarget(collision.gameObject);
-
-                m_FoodCount++;
-                if (m_FoodCount >= reproductionRate)
-                {
-                    m_envController.SpawnAgent(team, transform.position); // duplica agente 
-                    m_FoodCount = 0;
-                }
             }
         }
         else
         {
             if (state == false && collision.gameObject.CompareTag("hunted")) // el cazador atrapa
             {
-                state = true;
-                Energy = MaxEnergy;
-                m_Renderer.material.color = colorState;
-                m_RealLossEnergy = 0;
-                AddReward(2f); // premio
-                m_envController.RewardGroup(Team.Hunter);
-
-                m_FoodCount++;
-                if (m_FoodCount >= reproductionRate)
-                {
-                    m_envController.SpawnAgent(team, transform.position); // duplica agente 
-                    m_FoodCount = 0;
-                }
-
+                CollisionBehavior();
+                //AddReward(0.2f); // premio
                 // comportamiento hunted
                 MultiAgentv3 agentHunted = collision.gameObject.GetComponent<MultiAgentv3>();
 
-                agentHunted.InactivateAgent();
+                agentHunted.DevourAgent();
             }
         }
     }
-    // reespawn 
-
+    private void CollisionBehavior()
+    {
+        state = true;
+        Energy = MaxEnergy;
+        m_Renderer.material.color = colorState;
+        m_RealLossEnergy = 0; // al "comer" deja de perder energia
+        //m_envController.RewardGroup(team);
+        AddReward(0.2f); // premio
+        m_FoodCount++;
+        if (m_FoodCount >= reproductionRate)
+        {
+            GameObject gameObjectAgent = m_envController.SpawnAgent(team, transform.position); // duplica agente 
+            if (gameObjectAgent != null)
+            {
+                m_FoodCount = 0;
+            }
+        }
+        m_TimeManager.RegisterTimerEvent(IntervalTimerState, ResetState); // timer state
+    }
+    // reespawn
+    private void AgentExhaustion() // cuando un agente muere por falta de energia
+    {
+        InactivateAgent();
+        m_envController.SpawnCarrion(transform.position);
+    }
+    private void DevourAgent() // cuando un agente es comido
+    {
+        InactivateAgent();
+        m_envController.AddFertilizer(transform.position);
+    }
     private void InactivateAgent()
     {
-        if (state == true)
-        {
-            m_envController.Penalize(team);
-            AddReward(-3f); // si "comio" y "muere" el castigo es mayor
-        }
-        else
-        {
-            AddReward(-2f);
-        }
-
+        AddReward(-0.5f);
         ResetAgent();
         m_envController.DespawnAgent(this);
-        m_envController.AddFertilizer(transform.position);
     }
     public void ResetAgent()
     {
-        if (team == Team.Hunted)
-        {
-            m_HuntedExistentialBonus = 0;
-        }
         agentRb.angularVelocity = Vector3.zero;
         agentRb.velocity = Vector3.zero;
         state = false;
-        Energy = MaxEnergy;
+        Energy = m_InitialEnergy;
         m_Renderer.material.color = Color.white;
         m_RealLossEnergy = LossEnergy;
         m_FoodCount = 0;
     }
 
     // end respawn
-    public override void OnEpisodeBegin()
-    {
+    //public override void OnEpisodeBegin()
+    //{
 
-    }
+    //}
 }
