@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Generatorv2 : MonoBehaviour
 {
@@ -50,6 +51,11 @@ public class Generatorv2 : MonoBehaviour
         //timeManager.RegisterTimerEvent(GrowthTime, PlantGrows);
         InitializeEvents();
     }
+    private void OnDisable()
+    {
+        m_Plant.transform.transform.localScale = new Vector3(0.2f,0.2f,0.2f);
+        m_Renderer.material = m_PreMaterial;
+    }
     private void InitializeEvents()
     {
         float countGenerate = 0;
@@ -89,8 +95,8 @@ public class Generatorv2 : MonoBehaviour
             }
 
         }
-        m_Renderer.material = m_PreMaterial;
-        m_Plant.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+        //m_Renderer.material = m_PreMaterial;
+        //m_Plant.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
         m_EnvController.DespawnGenerator(gameObject);
     }
 
@@ -107,6 +113,7 @@ public class Generatorv2 : MonoBehaviour
         target.transform.localScale = endScale;
         m_Renderer.material = PostMaterial;
     }
+    // es necesario un reset para borrar todas las corrutinas cuando se resetea la escena ///////////////
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;

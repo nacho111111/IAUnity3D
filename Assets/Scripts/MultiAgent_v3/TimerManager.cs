@@ -30,11 +30,16 @@ public class TimerManager : MonoBehaviour
                 timerEvents.RemoveAt(i);
             }
         }
+
     }
 
     public void RegisterTimerEvent(float timeInSeconds, Action action)
     {
         float triggerTime = Time.time + timeInSeconds; // Define cuándo ejecutar el evento
         timerEvents.Add(new TimerEvent(triggerTime, action));
+    }
+    public void ClearAllTimerEvents()
+    {
+        timerEvents.Clear();
     }
 }

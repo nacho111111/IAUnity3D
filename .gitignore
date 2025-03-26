@@ -104,7 +104,3 @@ coverage.xml
 # Ignorar la carpeta Temp y Library de Unity
 Temp/
 Library/
-
-# Asegúrate de no ignorar los archivos .prefab
-!*.prefab
-!*.prefab.meta

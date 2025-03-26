@@ -193,7 +193,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 862f55f0b17467346895bc358ea0f1bc, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 1
   m_BehaviorType: 0
   m_BehaviorName: agentHunted
@@ -250,9 +250,12 @@ MonoBehaviour:
   colorState: {r: 0, g: 0, b: 0, a: 0}
   Energy: 0
   MaxEnergy: 0
+  InitialEnergy: 0
   LossEnergy: 0
   MovSpeed: 0
+  reproductionRate: 0
+  m_FoodCount: 0
   team: 0
-  temp: 0
   state: 0
+  IntervalTimerState: 0
   agentRb: {fileID: 0}
