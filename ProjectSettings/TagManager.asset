@@ -15,6 +15,7 @@ TagManager:
   - Generator
   - Fertilizer
   - Carrion
+  - trigger
   layers:
   - Default
   - TransparentFX
@@ -26,10 +27,10 @@ TagManager:
   - Hunted
   - Fertilizer
   - Carrion
-  - 
-  - 
-  - 
-  - 
+  - Hunter
+  - Generator
+  - Target
+  - Trigger
   - 
   - 
   - 

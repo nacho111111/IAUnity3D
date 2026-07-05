@@ -1,0 +1,125 @@
+{
+    "agentHunted": {
+        "checkpoints": [
+            {
+                "steps": 4499793,
+                "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted\\agentHunted-4499793.onnx",
+                "reward": -0.5475899047321744,
+                "creation_time": 1783240236.8966007,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted\\agentHunted-4499793.pt"
+                ]
+            },
+            {
+                "steps": 4999282,
+                "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted\\agentHunted-4999282.onnx",
+                "reward": -0.41858343028083994,
+                "creation_time": 1783245882.3139517,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted\\agentHunted-4999282.pt"
+                ]
+            },
+            {
+                "steps": 5499193,
+                "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted\\agentHunted-5499193.onnx",
+                "reward": -0.662972167134285,
+                "creation_time": 1783253406.7883317,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted\\agentHunted-5499193.pt"
+                ]
+            },
+            {
+                "steps": 5998871,
+                "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted\\agentHunted-5998871.onnx",
+                "reward": -0.06458709104060147,
+                "creation_time": 1783259026.6928644,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted\\agentHunted-5998871.pt"
+                ]
+            },
+            {
+                "steps": 6492785,
+                "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted\\agentHunted-6492785.onnx",
+                "reward": -0.22168122258998693,
+                "creation_time": 1783266945.738473,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted\\agentHunted-6492785.pt"
+                ]
+            }
+        ],
+        "elo": 1146.2470262735517,
+        "final_checkpoint": {
+            "steps": 6492785,
+            "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted.onnx",
+            "reward": -0.22168122258998693,
+            "creation_time": 1783266945.738473,
+            "auxillary_file_paths": [
+                "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunted\\agentHunted-6492785.pt"
+            ]
+        }
+    },
+    "agentHunter": {
+        "checkpoints": [
+            {
+                "steps": 4499991,
+                "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter\\agentHunter-4499991.onnx",
+                "reward": 6.2310929000377655,
+                "creation_time": 1783242122.6789017,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter\\agentHunter-4499991.pt"
+                ]
+            },
+            {
+                "steps": 4998528,
+                "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter\\agentHunter-4998528.onnx",
+                "reward": 4.127172884954647,
+                "creation_time": 1783249112.0962915,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter\\agentHunter-4998528.pt"
+                ]
+            },
+            {
+                "steps": 5499112,
+                "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter\\agentHunter-5499112.onnx",
+                "reward": null,
+                "creation_time": 1783255206.5026555,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter\\agentHunter-5499112.pt"
+                ]
+            },
+            {
+                "steps": 5999117,
+                "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter\\agentHunter-5999117.onnx",
+                "reward": 3.3945771381258965,
+                "creation_time": 1783262259.1055605,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter\\agentHunter-5999117.pt"
+                ]
+            },
+            {
+                "steps": 6353719,
+                "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter\\agentHunter-6353719.onnx",
+                "reward": 3.2706530552643995,
+                "creation_time": 1783266946.2813938,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter\\agentHunter-6353719.pt"
+                ]
+            }
+        ],
+        "elo": 1211.6630493049806,
+        "final_checkpoint": {
+            "steps": 6353719,
+            "file_path": "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter.onnx",
+            "reward": 3.2706530552643995,
+            "creation_time": 1783266946.2813938,
+            "auxillary_file_paths": [
+                "results\\MultiAgent_MemoryAdd2.2_rewards\\agentHunter\\agentHunter-6353719.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0.dev0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

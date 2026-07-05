@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1450444751544705022}
   - component: {fileID: 6851927963459529131}
   - component: {fileID: 2031578508371196084}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Generatorv2
   m_TagString: Generator
   m_Icon: {fileID: 0}

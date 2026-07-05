@@ -1,0 +1,116 @@
+{
+    "agentHunter": {
+        "checkpoints": [
+            {
+                "steps": 498650,
+                "file_path": "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter\\agentHunter-498650.onnx",
+                "reward": 3.1057307347655296,
+                "creation_time": 1783097119.4368224,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter\\agentHunter-498650.pt"
+                ]
+            },
+            {
+                "steps": 999328,
+                "file_path": "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter\\agentHunter-999328.onnx",
+                "reward": 2.0947083574461027,
+                "creation_time": 1783104611.4404094,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter\\agentHunter-999328.pt"
+                ]
+            },
+            {
+                "steps": 1498802,
+                "file_path": "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter\\agentHunter-1498802.onnx",
+                "reward": 0.2804371759051546,
+                "creation_time": 1783112794.3329005,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter\\agentHunter-1498802.pt"
+                ]
+            },
+            {
+                "steps": 1998880,
+                "file_path": "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter\\agentHunter-1998880.onnx",
+                "reward": null,
+                "creation_time": 1783119472.3198879,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter\\agentHunter-1998880.pt"
+                ]
+            },
+            {
+                "steps": 2009160,
+                "file_path": "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter\\agentHunter-2009160.onnx",
+                "reward": 2.125158995190369,
+                "creation_time": 1783119892.139559,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter\\agentHunter-2009160.pt"
+                ]
+            }
+        ],
+        "elo": 1267.2727245084338,
+        "final_checkpoint": {
+            "steps": 2009160,
+            "file_path": "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter.onnx",
+            "reward": 2.125158995190369,
+            "creation_time": 1783119892.139559,
+            "auxillary_file_paths": [
+                "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunter\\agentHunter-2009160.pt"
+            ]
+        }
+    },
+    "agentHunted": {
+        "checkpoints": [
+            {
+                "steps": 498994,
+                "file_path": "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunted\\agentHunted-498994.onnx",
+                "reward": 0.18488967046141624,
+                "creation_time": 1783098672.3306572,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunted\\agentHunted-498994.pt"
+                ]
+            },
+            {
+                "steps": 999604,
+                "file_path": "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunted\\agentHunted-999604.onnx",
+                "reward": 0.05221376568078995,
+                "creation_time": 1783106327.1720178,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunted\\agentHunted-999604.pt"
+                ]
+            },
+            {
+                "steps": 1499553,
+                "file_path": "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunted\\agentHunted-1499553.onnx",
+                "reward": 0.36055555819932905,
+                "creation_time": 1783114216.6560886,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunted\\agentHunted-1499553.pt"
+                ]
+            },
+            {
+                "steps": 1838336,
+                "file_path": "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunted\\agentHunted-1838336.onnx",
+                "reward": 0.12073346490506083,
+                "creation_time": 1783119892.5838861,
+                "auxillary_file_paths": [
+                    "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunted\\agentHunted-1838336.pt"
+                ]
+            }
+        ],
+        "elo": 1256.9405478486165,
+        "final_checkpoint": {
+            "steps": 1838336,
+            "file_path": "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunted.onnx",
+            "reward": 0.12073346490506083,
+            "creation_time": 1783119892.5838861,
+            "auxillary_file_paths": [
+                "results\\MultiAgent_MemoryAdd2.1_40k\\agentHunted\\agentHunted-1838336.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0.dev0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

@@ -152,7 +152,7 @@ public class EnvControllerv3 : MonoBehaviour
         m_CountSpawns = SpawnList.Count;
         ObjectBaseCount = m_HowHunted + m_HowHunter + m_HowGenerator;
 
-        m_TimeManager.RegisterTimerEvent(5, StatRegistarAgents);
+        m_TimeManager.RegisterTimerEvent(5, RegisterStatAgents);
 
         foreach (var item in SpawnList)
         {
@@ -163,12 +163,15 @@ public class EnvControllerv3 : MonoBehaviour
     void FixedUpdate()
     {
 
-        float Existential = 1f / MaxEnvironmentSteps; // recompensa por perdurar el sistema
-        m_HuntedGroup.AddGroupReward(Existential);
-        m_HunterGroup.AddGroupReward(Existential);
+        //float Existential = 2f / MaxEnvironmentSteps; // recompensa por perdurar el sistema
+
+        //float Existential = 1f / MaxEnvironmentSteps;
+
+        m_HuntedGroup.AddGroupReward(2f / MaxEnvironmentSteps);
+        m_HunterGroup.AddGroupReward(0.5f / MaxEnvironmentSteps);
 
         m_ResetTimer += 1;
-        if (m_ResetTimer >= MaxEnvironmentSteps && MaxEnvironmentSteps > 0) // si se llega al maximo tiempo hay premio
+        if (m_ResetTimer >= MaxEnvironmentSteps && MaxEnvironmentSteps > 0) // si se llega al maximo tiempo hay reward
         {
             m_HuntedGroup.AddGroupReward(2);
             m_HunterGroup.AddGroupReward(2);
@@ -269,13 +272,13 @@ public class EnvControllerv3 : MonoBehaviour
     //    return true;
     //}
 
-    private void StatRegistarAgents()
+    private void RegisterStatAgents()
     {
-        stats.Add("Agent/cantidad", CountHunted);
-        
-        stats.Add("Agent/cantidad", CountHunter);
+        stats.Add("Population/Hunted", CountHunted, StatAggregationMethod.MostRecent);
+        stats.Add("Population/Hunter", CountHunter, StatAggregationMethod.MostRecent);
+        stats.Add("Population/RatioHunterHunted", CountHunter / (float)(CountHunted + 1), StatAggregationMethod.MostRecent);
 
-        m_TimeManager.RegisterTimerEvent(5, StatRegistarAgents);
+        m_TimeManager.RegisterTimerEvent(5, RegisterStatAgents);
     }
     public void VerifyAgents()
     {
@@ -525,6 +528,11 @@ public class EnvControllerv3 : MonoBehaviour
     }
     public void DespawnTarget(GameObject target)
     {
+        if (!ActiveObjects.ContainsKey(target))
+        {
+            Debug.LogError($"Despawn duplicado: {target.name}");
+            return;
+        }
         target.GetComponent<Targetv3>().ResetTarget();
         target.SetActive(false);
         ActiveObjects.Remove(target);
@@ -540,12 +548,13 @@ public class EnvControllerv3 : MonoBehaviour
 
     private void InterrupredEpisode()
     {
-        m_HuntedGroup.AddGroupReward((-1 + (float)m_ResetTimer / MaxEnvironmentSteps) * 1);
-        m_HunterGroup.AddGroupReward((-1 + (float)m_ResetTimer / MaxEnvironmentSteps) * 1);
+        //Debug.Log(m_ResetTimer + " " + (2f / MaxEnvironmentSteps)* m_ResetTimer + " " + -2f * (1 - (float)m_ResetTimer / MaxEnvironmentSteps));
+        m_HuntedGroup.AddGroupReward((-2f * (1 - (float)m_ResetTimer / MaxEnvironmentSteps)));
+        m_HunterGroup.AddGroupReward((-2f * (1 - (float)m_ResetTimer / MaxEnvironmentSteps)));
 
         m_HuntedGroup.GroupEpisodeInterrupted();
         m_HunterGroup.GroupEpisodeInterrupted();
-        stats.Add("Timer/Tiempo en colapsar",m_ResetTimer);
+        
 
         ResetScene();
     }
@@ -595,15 +604,16 @@ public class EnvControllerv3 : MonoBehaviour
     //}
     public void ResetScene()
     {
+        Debug.Log(m_ResetTimer + " / " + MaxEnvironmentSteps);
         if (randomize)
         {
             Randomizer();
         }
+        stats.Add("Consumption/TargetsEaten", m_TargetsEaten);
+        stats.Add("Consumption/HuntedsEaten", m_huntedsEaten);
+        stats.Add("Generation/GeneratorsSpawned", m_GeneratorsSpawns);
+        stats.Add("Environment/SurvivalTime", m_ResetTimer, StatAggregationMethod.Average);
 
-        stats.Add("hunted/Cantidad target comidos", m_TargetsEaten);
-        stats.Add("hunter/Cantidad hunted comidos", m_huntedsEaten);
-        stats.Add("generator/Cantidad generators instanciados", m_GeneratorsSpawns);
-        
         m_TargetsEaten = 0;
         m_huntedsEaten = 0;
         m_GeneratorsSpawns = 0;
@@ -611,7 +621,7 @@ public class EnvControllerv3 : MonoBehaviour
         m_TimeManager.ClearAllTimerEvents();
         m_ResetTimer = 0;
         int iterInd = 0;
-        //Debug.Log("existen " + ActiveObjects.Count + " al final del episodio");
+
         ResetObject();
 
         var randomIndices = Enumerable.Range(0, m_CountSpawns)
@@ -640,6 +650,5 @@ public class EnvControllerv3 : MonoBehaviour
             SpawnGenerator(newPosition);
             iterInd++;
         }
-        //Debug.Log("existen " + ActiveObjects.Count + " al inicio del episodio");
     }
 }
